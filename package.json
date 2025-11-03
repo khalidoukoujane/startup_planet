@@ -1,0 +1,15 @@
+{
+  "name": "startup_planet",
+  "version": "1.0.0",
+  "description": "an express api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "khalidoukoujane",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
