@@ -34,6 +34,13 @@ app.get("/api", (req, res) => {
 	}
 	res.json(filteredData);
 })
+app.get("/api/:field/:term", (req, res) => {
+	const { field, term } = req.params;
+	const filteredData = startups.filter(startup => 
+		startup[field].toLocaleLowerCase() === term.toLocaleLowerCase()
+	);
+	res.json(filteredData);
+})
 app.listen(PORT, () => {
 	console.log(`server started on port: ${PORT}`);
 }) 
