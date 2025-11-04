@@ -36,10 +36,20 @@ app.get("/api", (req, res) => {
 })
 app.get("/api/:field/:term", (req, res) => {
 	const { field, term } = req.params;
-	const filteredData = startups.filter(startup => 
-		startup[field].toLocaleLowerCase() === term.toLocaleLowerCase()
-	);
-	res.json(filteredData);
+	const allowedFields = ['country', 'continent', 'industry'];
+	if (allowedFields.includes(field)) {
+		const filteredData = startups.filter(startup => 
+			startup[field].toLocaleLowerCase() === term.toLocaleLowerCase()
+		);
+		res.json(filteredData);
+	} else {
+		res.status(400);
+		res.json(
+			{
+				message: "Search field not allowed. Please use only 'country', 'continent', 'industry'"
+			});
+		return ;
+	}
 })
 app.listen(PORT, () => {
 	console.log(`server started on port: ${PORT}`);
