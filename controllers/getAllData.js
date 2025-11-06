@@ -1,4 +1,4 @@
-import { startups } from "../data";
+import { startups } from "../data.js";
 
 export const getAllData = (req, res) => {
 	let filteredData = startups;
