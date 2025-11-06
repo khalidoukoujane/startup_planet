@@ -182,10 +182,6 @@ Save response to file:
 curl http://localhost:8000/api -o startups.json
 ```
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## Author
 
 **Khalid Oukoujane**
